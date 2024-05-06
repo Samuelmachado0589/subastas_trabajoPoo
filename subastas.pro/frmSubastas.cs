@@ -17,6 +17,17 @@ namespace subastas.pro
 {
     public partial class frmSubastas : Form
     {
+
+        public static frmSubastas Instancia = null;
+        public static frmSubastas ventanaUnica()
+        {
+            if (Instancia == null)
+            {
+                Instancia = new frmSubastas();
+            }
+            return Instancia;
+        }
+
         public frmSubastas()
         {
             InitializeComponent();
@@ -46,12 +57,9 @@ namespace subastas.pro
 
 
 
+
         }
-        public void deshabilitarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Deshabilitar el GroupBox
-            grbRegistros.Enabled = true;
-        }
+
 
         List<object> nombreF = new List<object>();
 
@@ -134,7 +142,7 @@ namespace subastas.pro
             {
                 MessageBox.Show("elija un Nombre");
             }
-             
+
             if (string.IsNullOrEmpty(Duracion))
             {
                 MessageBox.Show("elija un Nombre");
@@ -157,23 +165,7 @@ namespace subastas.pro
 
         private void button4_Click(object sender, EventArgs e)
         {
-            /* if (dgvFinalSubasta.Rows.Count > 0)
-             {
-                 // Obtiene el valor máximo en la columna especificada (columna 2 en este caso)
-                 int maxValue = dgvFinalSubasta.Rows.Cast<DataGridViewRow>()
-                                  .Max(row => Convert.ToInt32(row.Cells[3].Value));
 
-                 // Busca la primera fila que tenga el valor máximo en la columna especificada
-                 DataGridViewRow rowWithMaxValue = dgvFinalSubasta.Rows.Cast<DataGridViewRow>().FirstOrDefault(row => Convert.ToInt32(row.Cells[3].Value) == maxValue);
-
-                 // Si se encuentra una fila con el valor máximo, selecciona esa fila
-                 if (rowWithMaxValue != null)
-                 {
-                     rowWithMaxValue.Selected = true;
-                 }
-
-             }
-            */
             if (dgvFinalSubasta.Rows.Count > 0)
             {
                 // Obtiene el valor máximo en la columna especificada (columna 3 en este caso)
@@ -186,16 +178,17 @@ namespace subastas.pro
                 // Si se encuentra una fila con el valor máximo
                 if (rowWithMaxValue != null)
                 {
-                    
-                   
-                        textBox1.Text = ( $"{dgvFinalSubasta.Columns[1].HeaderText}: {rowWithMaxValue.Cells[1].Value}\n \r\n" +
-                        $"{dgvFinalSubasta.Columns[2].HeaderText}: {rowWithMaxValue.Cells[2].Value}\n \r\n " +
-                        $"{dgvFinalSubasta.Columns[3].HeaderText}: {rowWithMaxValue.Cells[3].Value}\n \r\n");
+
+
+                    textBox1.Text = ($"{dgvFinalSubasta.Columns[1].HeaderText}: {rowWithMaxValue.Cells[1].Value}\n \r\n" +
+                    $"{dgvFinalSubasta.Columns[2].HeaderText}: {rowWithMaxValue.Cells[2].Value}\n \r\n " +
+                    $"{dgvFinalSubasta.Columns[3].HeaderText}: {rowWithMaxValue.Cells[3].Value}\n \r\n");
 
 
                     pictureBox1.Visible = true;
                 }
             }
         }
+
     }
 }

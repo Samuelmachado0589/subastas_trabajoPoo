@@ -50,6 +50,7 @@
             txtEmail = new TextBox();
             FA = new Label();
             grbSubastas = new GroupBox();
+            btnRefrescarDatos = new Button();
             textBox1 = new TextBox();
             cmbApellidoF = new ComboBox();
             cmbNombreF = new ComboBox();
@@ -82,7 +83,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(643, 64);
+            button1.Location = new Point(640, 25);
             button1.Name = "button1";
             button1.Size = new Size(186, 58);
             button1.TabIndex = 2;
@@ -92,6 +93,7 @@
             // 
             // grbRegistros
             // 
+            grbRegistros.BackColor = Color.SaddleBrown;
             grbRegistros.Controls.Add(button2);
             grbRegistros.Controls.Add(dgvRegistros);
             grbRegistros.Controls.Add(button3);
@@ -105,6 +107,7 @@
             grbRegistros.Controls.Add(txtApellido);
             grbRegistros.Controls.Add(txtNombre);
             grbRegistros.Controls.Add(txtEmail);
+            grbRegistros.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             grbRegistros.Location = new Point(12, 53);
             grbRegistros.Name = "grbRegistros";
             grbRegistros.Size = new Size(386, 485);
@@ -180,7 +183,7 @@
             // 
             txtTelefono.Location = new Point(151, 318);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(163, 23);
+            txtTelefono.Size = new Size(163, 33);
             txtTelefono.TabIndex = 30;
             // 
             // label2
@@ -217,7 +220,7 @@
             // 
             txtDocumentos.Location = new Point(151, 280);
             txtDocumentos.Name = "txtDocumentos";
-            txtDocumentos.Size = new Size(163, 23);
+            txtDocumentos.Size = new Size(163, 33);
             txtDocumentos.TabIndex = 28;
             // 
             // label4
@@ -234,21 +237,21 @@
             // 
             txtApellido.Location = new Point(151, 239);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(163, 23);
+            txtApellido.Size = new Size(163, 33);
             txtApellido.TabIndex = 27;
             // 
             // txtNombre
             // 
             txtNombre.Location = new Point(151, 193);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(163, 23);
+            txtNombre.Size = new Size(163, 33);
             txtNombre.TabIndex = 25;
             // 
             // txtEmail
             // 
             txtEmail.Location = new Point(151, 363);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(163, 23);
+            txtEmail.Size = new Size(163, 33);
             txtEmail.TabIndex = 26;
             // 
             // FA
@@ -263,6 +266,8 @@
             // 
             // grbSubastas
             // 
+            grbSubastas.BackColor = Color.SaddleBrown;
+            grbSubastas.Controls.Add(btnRefrescarDatos);
             grbSubastas.Controls.Add(textBox1);
             grbSubastas.Controls.Add(cmbApellidoF);
             grbSubastas.Controls.Add(cmbNombreF);
@@ -282,12 +287,22 @@
             grbSubastas.Controls.Add(txtCondicion);
             grbSubastas.Controls.Add(label10);
             grbSubastas.Controls.Add(button1);
+            grbSubastas.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             grbSubastas.Location = new Point(415, 53);
             grbSubastas.Name = "grbSubastas";
             grbSubastas.Size = new Size(871, 485);
             grbSubastas.TabIndex = 21;
             grbSubastas.TabStop = false;
             grbSubastas.Text = "Subastas";
+            // 
+            // btnRefrescarDatos
+            // 
+            btnRefrescarDatos.Location = new Point(640, 89);
+            btnRefrescarDatos.Name = "btnRefrescarDatos";
+            btnRefrescarDatos.Size = new Size(186, 58);
+            btnRefrescarDatos.TabIndex = 55;
+            btnRefrescarDatos.Text = "Refrescar Datos";
+            btnRefrescarDatos.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -302,7 +317,7 @@
             cmbApellidoF.FormattingEnabled = true;
             cmbApellidoF.Location = new Point(445, 83);
             cmbApellidoF.Name = "cmbApellidoF";
-            cmbApellidoF.Size = new Size(164, 23);
+            cmbApellidoF.Size = new Size(164, 33);
             cmbApellidoF.TabIndex = 53;
             // 
             // cmbNombreF
@@ -310,7 +325,7 @@
             cmbNombreF.FormattingEnabled = true;
             cmbNombreF.Location = new Point(445, 44);
             cmbNombreF.Name = "cmbNombreF";
-            cmbNombreF.Size = new Size(163, 23);
+            cmbNombreF.Size = new Size(163, 33);
             cmbNombreF.TabIndex = 52;
             // 
             // label12
@@ -338,13 +353,13 @@
             cmbDuracion.FormattingEnabled = true;
             cmbDuracion.Location = new Point(143, 78);
             cmbDuracion.Name = "cmbDuracion";
-            cmbDuracion.Size = new Size(164, 23);
+            cmbDuracion.Size = new Size(164, 33);
             cmbDuracion.TabIndex = 49;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2024_05_05_084025;
-            pictureBox1.Location = new Point(579, 345);
+            pictureBox1.Location = new Point(617, 345);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(136, 134);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -376,7 +391,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semilight", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label8.Location = new Point(547, 9);
+            label8.Location = new Point(430, 14);
             label8.Name = "label8";
             label8.Size = new Size(70, 25);
             label8.TabIndex = 44;
@@ -387,7 +402,7 @@
             cmbProducto.FormattingEnabled = true;
             cmbProducto.Location = new Point(143, 39);
             cmbProducto.Name = "cmbProducto";
-            cmbProducto.Size = new Size(163, 23);
+            cmbProducto.Size = new Size(163, 33);
             cmbProducto.TabIndex = 43;
             // 
             // cmbOferta
@@ -395,7 +410,7 @@
             cmbOferta.FormattingEnabled = true;
             cmbOferta.Location = new Point(445, 124);
             cmbOferta.Name = "cmbOferta";
-            cmbOferta.Size = new Size(163, 23);
+            cmbOferta.Size = new Size(163, 33);
             cmbOferta.TabIndex = 42;
             // 
             // dgvFinalSubasta
@@ -484,6 +499,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.AppWorkspace;
             ClientSize = new Size(1298, 563);
             Controls.Add(grbSubastas);
             Controls.Add(FA);
@@ -547,5 +563,6 @@
         private Label label12;
         private Label label13;
         private TextBox textBox1;
+        private Button btnRefrescarDatos;
     }
 }
